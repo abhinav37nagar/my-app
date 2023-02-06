@@ -1,10 +1,31 @@
 <h2>My Books</h2>
-<ul class="books">
-  <li *ngFor="let book of books">
-    <span>{{book.id}}</span>
-    <span>{{book.title}}</span>
-    <span>{{book.author}}</span>
-    <span>{{book.latest_publish_year}}</span>
-    <span>{{book.first_publish_year}}</span>
-  </li>
-</ul>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let book">{{book.id}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let book">{{book.title}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef>Author</th>
+    <td mat-cell *matCellDef="let book">{{book.author}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="latest_publish_year">
+    <th mat-header-cell *matHeaderCellDef>Latest Publish Year</th>
+    <td mat-cell *matCellDef="let book">{{book.latest_publish_year}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="first_publish_year">
+    <th mat-header-cell *matHeaderCellDef>First Publish Year</th>
+    <td mat-cell *matCellDef="let book">{{book.first_publish_year}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
