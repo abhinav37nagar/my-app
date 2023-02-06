@@ -1,0 +1,18 @@
+<h2>My Subjects</h2>
+<ul class="subjects">
+  <li *ngFor="let subject of subjects">
+    <button type="button" [class.selected]="subject === selectedSubject" (click)="onSelect(subject)">
+      <span class="badge">{{subject.id}}</span>
+      <span class="name">{{subject.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedSubject">
+  <h2>{{selectedSubject.name | uppercase}} Details</h2>
+  <div>id: {{selectedSubject.id}}</div>
+  <div>
+    <label for="subject-name">Subject name: </label>
+    <input id="subject-name" [(ngModel)]="selectedSubject.name" placeholder="name">
+  </div>
+</div>
