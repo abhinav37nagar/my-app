@@ -25,7 +25,7 @@ export class BooksComponent {
   getBooks(): void {
     this.bookService.getBooks().subscribe((books) => {
       for (let i = 0; i < books.length; i++) {
-        if (i >= 10) break;
+        if (i >= 20) break;
         let book: Book = {
           id: i+1,
           title:

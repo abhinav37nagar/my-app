@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { BooksComponent } from './books/books.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatSlideToggleModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
