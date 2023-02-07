@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +41,8 @@ import { SearchComponent } from './search/search.component';
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
+    MatPaginatorModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

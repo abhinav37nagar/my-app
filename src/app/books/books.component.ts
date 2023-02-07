@@ -14,7 +14,13 @@ export class BooksComponent {
   books: Book[] = [];
 
   constructor(private bookService: BookService) {}
-  displayedColumns: string[] = ['id','title', 'author', 'latest_publish_year', 'first_publish_year'];
+  displayedColumns: string[] = [
+    'id',
+    'title',
+    'author',
+    'latest_publish_year',
+    'first_publish_year',
+  ];
   dataToDisplay = [...this.books];
   dataSource = new BooksDataSource(this.dataToDisplay);
 
@@ -27,7 +33,7 @@ export class BooksComponent {
       for (let i = 0; i < books.length; i++) {
         if (i >= 20) break;
         let book: Book = {
-          id: i+1,
+          id: i + 1,
           title:
             books[i].title +
             (books[i].subtitle ? `: ${books[i].subtitle}` : ''),
