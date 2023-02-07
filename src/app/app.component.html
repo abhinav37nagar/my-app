@@ -4,6 +4,9 @@
     <app-subjects></app-subjects>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-books></app-books>
+    <mat-grid-list cols="1" rowHeight="fit">
+      <app-search></app-search>
+      <app-books></app-books>
+    </mat-grid-list>
   </mat-sidenav-content>
 </mat-sidenav-container>
