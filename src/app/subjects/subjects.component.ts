@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { Subject } from '../subject';
-import { SUBJECTS } from '../mock-subjects';
 import { SubjectService } from '../subject.service';
 
 @Component({
@@ -13,6 +12,8 @@ export class SubjectsComponent {
   selectedSubject?: Subject;
 
   subjects: Subject[] = [];
+
+  @Output() redirectEvent = new EventEmitter<string>();
 
   constructor(private subjectService: SubjectService) {}
 
@@ -28,5 +29,9 @@ export class SubjectsComponent {
     this.subjectService
       .getSubjects()
       .subscribe((subjects) => (this.subjects = subjects));
+  }
+
+  redir(subject: string) {
+    this.redirectEvent.emit(subject);
   }
 }

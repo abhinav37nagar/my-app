@@ -13,12 +13,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { BooksComponent } from './books/books.component';
 import { SearchComponent } from './search/search.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { SearchComponent } from './search/search.component';
     SubjectsComponent,
     BooksComponent,
     SearchComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { SearchComponent } from './search/search.component';
     MatCardModule,
     MatPaginatorModule,
     MatListModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

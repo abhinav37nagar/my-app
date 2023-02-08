@@ -1,3 +1,6 @@
 <mat-list role="list">
-  <mat-list-item *ngFor="let subject of subjects">{{subject.name}}</mat-list-item>
+  <div *ngFor="let subject of subjects">
+    <mat-list-item (click)="redir(subject.name)">{{subject.name}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </div>
 </mat-list>

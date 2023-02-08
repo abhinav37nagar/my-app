@@ -1,12 +1,11 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="0" fixedBottomGap="0">
     <h1>{{title}}</h1>
-    <app-subjects></app-subjects>
+    <app-subjects (redirectEvent)="refreshURL($event)"></app-subjects>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-grid-list cols="1" rowHeight="fit">
-      <app-search></app-search>
-      <app-books></app-books>
+      <app-books [pathname]="pathname"></app-books>
     </mat-grid-list>
   </mat-sidenav-content>
 </mat-sidenav-container>

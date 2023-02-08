@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
-  searchText = 'JavaScript';
+  searchQuery = '';
+  subject = '';
+  @Output() searchEvent = new EventEmitter<string>();
+
+  ngOnInit(): void {
+    console.log('pp', window.location.pathname);
+  }
+
+  handleSearchEvent() {
+    this.searchEvent.emit(this.searchQuery);
+  }
 }
